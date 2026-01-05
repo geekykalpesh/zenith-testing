@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { useScroll, useTransform, motion, AnimatePresence } from "framer-motion";
+import { useScroll, useTransform, motion, AnimatePresence, Variants } from "framer-motion";
 
 const frameCount = 240;
 
@@ -107,7 +107,7 @@ export default function HeadphoneScroll() {
   }, [images, frameIndex, isLoading]);
 
   // --- Animation Variants ---
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     initial: { opacity: 0, y: 50, filter: "blur(10px)" },
     animate: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" } },
     exit: { opacity: 0, y: -50, filter: "blur(10px)", transition: { duration: 0.5 } }
